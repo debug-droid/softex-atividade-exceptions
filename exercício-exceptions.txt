@@ -1,0 +1,30 @@
+public class FluxoComTratamento {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Inicio do main");
+		try{
+			//chama o metodo1 da linha 17
+		    metodo1();
+		} catch(ArithmeticException | NullPointerException ex) {
+		    String msg = ex.getMessage();
+		    System.out.println("ArithmeticException " + msg);
+		    // método da classe exception para escrever a exceção no console
+		    ex.printStackTrace();
+		} 
+		System.out.println("Fim do main");
+	}
+
+	//imprime a mensagem e chama o metodo2 na linha 25
+	private static void metodo1() {
+		System.out.println("Inicio do metodo1");
+		metodo2();
+		System.out.println("Fim do metodo1");
+	}
+
+	//imprime a mensagem e força uma exception
+	private static void metodo2() {
+	    System.out.println("Inicio do metodo2");
+	    throw new ArithmeticException("Deu erro");
+	}
+}
